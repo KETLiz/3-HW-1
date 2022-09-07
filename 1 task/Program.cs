@@ -6,11 +6,20 @@
 // 23432 -> да
 
 Console.WriteLine("Введите пятизначное число: ");
-string n = Console.ReadLine();
-string Method(string a)
+int n = Convert.ToInt32(Console.ReadLine());
+
+
+string Palindrom(int x)
 {
-    if (n[0] == n[4] && n[1] == n[3]) return "Введенное число является палиндромом!";
-    else return "Введенное число не палиндром!";
+    int a1 = x/10000;
+    int a2 = x%10;
+    int b12 = x/1000;
+    int b1 = b12%10;
+    int b21 = x/10;
+    int b2 = b21%10;
+
+    if (a1 == a2 && b1 == b2) return "Число является палиндромом";
+    else return "Число не является палиндромом";
 }
-string result = Method(n);
+string result = Palindrom(n);
 Console.WriteLine(result);
